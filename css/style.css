@@ -1,0 +1,519 @@
+/*ESTILOS COMUNES A TODAS LAS PÁGINAS*/
+
+*{
+    box-sizing: border-box;
+}
+html, body {
+    margin:0;
+    height: 100%;
+}
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body{
+    margin:0
+}
+header, nav{
+    background-color: black;
+}
+
+header {
+    padding: 0 2em;
+    margin-bottom: 2em;
+    /*convertimos el elemento en una malla con 2 columnas, a la primera le asignamos el tamaño del logo para que siempre se vea igual
+    y a la segunda columna le asignamos el espacio sobrante*/
+    display: grid;
+    grid-template-columns: 213px auto;
+    /*con position fixed nos aseguramos de que este elemento siempre se encuentre en la parte superior de la pantalla, le especificamos top,
+    left y right a 0 para que ocupe todo el ancho*/
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /*esto es para asegurarnos de que este elemento se superponga siempre por encima del resto*/
+}
+
+/*esto sirve para centrar el logo vertical y horizontalmente*/
+.contenedor-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    padding: 1em;
+}
+
+/*asi hacemos que la separacion entre las opciones del menu de navegación sea uniforme*/
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+nav li {
+    list-style: none;
+}
+
+
+nav a {
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+    text-transform:uppercase;
+   
+}
+nav a:hover{
+    color: yellow;
+    
+}
+.seleccionado{
+    color:yellow;
+}
+
+h1,h2,h3,h4 {
+    text-align: center;
+}
+
+h1{
+    background-color: black;
+    color: white;
+    /*como se trata de un elemento en linea, ocupa todo el ancho de la pantalla, 
+    con fit-content hacemos que el elemento solo mida el espacio que ocupa su contenido*/
+    width: fit-content; 
+    margin: 0 auto 2em;
+    text-transform: uppercase;
+    font-weight: 70;
+    padding: 2px;
+}
+h2{
+    font-weight: 60;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+main {
+    flex:1;
+}
+
+body footer {
+    background-color: black;
+    color: white;
+    padding: 1em 1em .2em 1em;
+    border-top:1px solid rgb(209 174 141 / 47%);
+    display: grid;
+    grid-template-areas: "direccion redes"
+    "direccion redes"
+    "aviso aviso";
+    grid-template-columns: 30% auto;
+    margin-top: 1em;
+}
+
+.redes {
+    grid-area: redes;
+    display: flex;
+    justify-content: space-between;
+    padding:0 2em;
+    font-size: x-large;
+    align-items: center;
+}
+.redes i {
+    cursor: pointer;
+    color:white;
+}
+.redes i:hover{
+    scale: 120%;
+}
+.direccion {
+    grid-area: direccion;
+}
+.direccion p {
+    margin:.25em 0;
+}
+.aviso {
+    grid-area: aviso;
+    font-size: 10px;
+    text-align: center;
+    color: lightgray;
+}
+.aviso p {
+    margin: 0 10% .3em;
+}
+
+/*para el estilo de este boton he usado la herramienta online de www.bestcssbuttongenerator.com*/
+.myButton {
+    box-shadow: 3px 4px 0px 0px #ad8200;
+	background:linear-gradient(to bottom, #fff08f 5%, #f0ac38 100%);
+	background-color:#fff08f;
+	border-radius:13px;
+	border:1px solid #755800;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #d1942a;
+}
+.myButton:hover {
+    background:linear-gradient(to bottom, #f0ac38 5%, #fff08f 100%);
+	background-color:#f0ac38;
+    color: white
+}
+.myButton:active {
+    position:relative;
+	top:1px;
+    color: white
+}
+.myButtonDisabled{
+    box-shadow: 3px 4px 0px 0px #1a1916;
+	background:linear-gradient(to bottom, #dedcd1 5%, #c9c3b9 100%);
+	background-color:#dedcd1;
+	border-radius:13px;
+	border:1px solid #141312;
+	display:inline-block;
+	color:gray;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 15px;
+	text-decoration:none;
+	
+}
+
+.margin-top{
+    margin-top: 82.5px;
+}
+
+/*ESTILOS PÁGINA INDEX*/
+
+.portada {
+    
+    width: auto;
+}
+.portada img {
+    height: auto;
+    width: 100%;
+}
+.contenedor-titulo-portada {
+    background-color: rgb(209 174 141 / 47%);
+    width: fit-content;
+    margin: auto;
+    padding: 2em;
+    position: absolute;
+    top: 210px;
+    left: 0;
+    right: 0;
+}
+.imagen-noticia{
+    max-width: 230px;
+    max-height: 230px;
+    margin: auto;
+    display: block;
+}
+.noticias {
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.noticias article {
+    margin:0 1em;
+}
+.colorFondo{
+    padding:1em 0;
+    background-color: rgb(209 174 141 / 47%);
+}
+.contenedor-multisection{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    
+}
+.contenedor-multisection section h4{
+    margin-bottom: 0;
+}
+.productos{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding:0 2em 1em 1em;
+    column-gap: 1em;
+}
+
+.imagen-producto{
+    width: 100%;
+    height:180px;
+    object-fit: cover;
+    margin: 1em;
+    border-radius: 3%;
+}
+
+.colecciones{
+    color:white;
+    background-color:black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+/*Aquí solo estoy eliminando estilos por defecto de las listas que hacen que los botones se vean mal*/
+.colecciones ul {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+.colecciones li {
+    margin: 1em auto;
+}
+.colecciones button {
+    border-radius: 20%;
+}
+.etiquetas-grid{
+    display: grid;
+    /*Con grid template areas podemos repartir el espacio en el contenedor grid de formas más complejas*/
+    grid-template-areas: "et1 et1 et2 et2"
+                         "et3 et3 et3 et3"
+                         "et4 et4 et5 et5";
+}
+
+/*para que grid template areas funcione hay que asignar a cada elemento el area del grid a la que pertenece*/
+.et1{
+    grid-area: et1;
+}
+.et2{
+    grid-area: et2;
+}
+.et3{
+    grid-area: et3;
+}
+.et4{
+    grid-area: et4;
+}
+.et5{
+    grid-area: et5;
+}
+/*con este selector css estoy seleccionando aquellos elementos hr inmediatamente hermanos a un elemento h3*/
+h3 ~ hr{
+    width: 25%;
+}
+
+
+.activado{
+    background:linear-gradient(to bottom, #f0ac38 5%, #fff08f 100%);
+	background-color:#f0ac38;
+    color: white
+}
+
+/*ESTILOS PÁGINA PRESUPUESTO*/
+.fondoImagen{
+    background-image: url("../resources/images/I6LC_HOVER.jpg");
+    background-size: cover;
+}
+form {
+    margin: 100px 10% 0;
+    background-color: rgb(209 174 141 / 70%);
+    padding: .5em 1em 1em;
+    border-radius: 10px;
+    border:1px solid black;
+    display: grid;
+    grid-template-areas: "titulo titulo"
+                         "cliente producto"
+                         "cliente producto"
+                         "confirmacion confirmacion";
+    grid-template-columns: 50% 50%;
+}
+
+.cliente{
+    grid-area: cliente;
+}
+.producto{
+    grid-area: producto;
+}
+.confirmacion{
+    grid-area: confirmacion;
+}
+form h1 {
+    color:black;
+    background-color: initial;
+    margin: 0 auto;
+    text-align: center;
+    grid-area: titulo;
+}
+fieldset {
+    background-color: rgb(209 174 141);
+    margin:.5em;
+}
+legend{
+    display: contents;
+    font-weight: bold;
+}
+input[type="checkbox"], label {
+    cursor: pointer;
+}
+
+.datoscli label{
+    display: inline-block;
+    width: 90px;
+}
+.datoscli input{
+    width: 70%;
+}
+.datospro > p {
+    display: flex;
+    justify-content: space-between;
+}
+.datospro > p > label{
+    display: inline-block;
+    width: 150px;
+}
+.datospro > p > input, select {
+    width: 100%
+} 
+.extras{
+    display: grid;
+    grid-template-areas: "span inputs";
+    grid-template-columns: 20% auto;
+}
+.extras span{
+    grid-area: span;
+}
+.extras div{
+    grid-area: inputs;
+}
+
+/*Por alguna razón que no entiendo estos input no terminan de alinearse bien con el resto, asique les he añadido
+margen para alinearlos bien*/
+.descuadre{
+    margin-left: 4px;
+}
+
+#precio{
+    text-align: right;
+}
+.botonera{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+/*ESTILOS PÁGINA GALERÍA*/
+.imagenPrincipal{
+    margin: 0 20% 1em 20%;
+    background-color: rgb(209 174 141 / 70%);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 0 1em 2em 1em;
+    border: solid black 1px;
+    border-radius: 20px;
+}
+.imagenPrincipal img{
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border: solid 1px black;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.imagenPrincipal h1{
+    background-color: initial;
+    color: black;
+    margin: .2em auto;
+}
+
+.cuadricula{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10%;
+    justify-content: space-between;
+}
+.cuadricula img{
+    width: 20%;
+    height: 50px;
+    margin: 5px;
+    cursor:pointer;
+    border: solid 1px black;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.cuadricula img:hover {
+    transform: scale(1.35);
+}
+
+.fondoImagen {
+    background-image: url("../resources/images/I6LC_HOVER.jpg");
+    background-size: cover
+}
+.galeria-main{
+    /* background-image: url("../resources/images/I6LC_HOVER.jpg");
+    background-size: cover; */
+    padding: 1em 0;
+}
+.galeria-footer{
+    margin-top: 0;
+}
+
+.flip-container {
+    perspective: 1000px; /* Añade profundidad */
+    height: 200px; 
+    margin: 20px;
+  }
+  
+  .flip-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Permite el 3D */
+    transition: transform 0.6s; /* Suaviza el volteo */
+    position: relative;
+  }
+  
+  .flip-card.flipped {
+    transform: rotateY(180deg); /* Voltea la tarjeta */
+  }
+  
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara posterior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flip-front {
+    background: #fff; /* Fondo blanco para la imagen */
+  }
+  
+  .flip-back {
+    background: #f8f8f8; /* Fondo claro para el reverso */
+    transform: rotateY(180deg); /* Voltea la cara trasera */
+  }
+/*ESTILOS PÁGINA CONTACTO*/
+
+.main-contacto{
+    display: grid;
+    grid-template-columns: 50% auto;
+    padding: 1em;
+}
+#map{
+    width: 100%;
+    height: 500px;
+    border: solid 2px black;
+    
+}
+.header-contacto{
+    z-index: 100000;
+}
+
+.datosContacto{
+    padding: 5%;
+}
+.datosContacto p{
+    text-align: center;
+}
+.datosContacto h1{
+    background-color: white;
+    color: black;
+}
